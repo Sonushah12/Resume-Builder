@@ -33,16 +33,16 @@ let firstnameElem = mainForm.firstname,
 
 //display elemenst
 let nameDsp = document.getElementById('fullname_dsp'),
-    imageDsp = document.getElementById('imag_dsp'),
+    imageDsp = document.getElementById('image_dsp'),
     phonenoDsp = document.getElementById('phoneno_dsp'),
     emailDsp = document.getElementById('email_dsp'),
     addressDsp = document.getElementById('address_dsp'),
     designationDsp = document.getElementById('designation_dsp'),
     summaryDsp = document.getElementById('summary_dsp'),
-    projectsDsp = document.getElementById('summary_dsp'),
+    projectsDsp = document.getElementById('projects_dsp'),
     achievementsDsp = document.getElementById('achievements_dsp'),
     skillsDsp = document.getElementById('skills_dsp'),
-    educationsDsp = document.getElementById('education_dsp'),
+    educationsDsp = document.getElementById('educations_dsp'),
     experiencesDsp = document.getElementById('experiences_dsp');
 
 
@@ -147,25 +147,25 @@ const getUserInputs = () => {
 function validateFormData(elem, elemType, elemName){
     // checking for text string and non empty string
     if(elemType == validType.TEXT){
-        if(!strRegex.test(elem.value) || elem.value.trim().length == 0) addErrMsg(elem, elemName);
+        if(!strReg.test(elem.value) || elem.value.trim().length == 0) addErrMsg(elem, elemName);
         else removeErrMsg(elem);
     }
 
     // checking for only text string
     if(elemType == validType.TEXT_EMP){
-        if(!strRegex.test(elem.value)) addErrMsg(elem, elemName);
+        if(!strReg.test(elem.value)) addErrMsg(elem, elemName);
         else removeErrMsg(elem);
     }
 
     // checking for email
     if(elemType == validType.EMAIL){
-        if(!emailRegex.test(elem.value) || elem.value.trim().length == 0) addErrMsg(elem, elemName);
+        if(!emailReg.test(elem.value) || elem.value.trim().length == 0) addErrMsg(elem, elemName);
         else removeErrMsg(elem);
     }
 
     // checking for phone number
     if(elemType == validType.PHONENO){
-        if(!phoneRegex.test(elem.value) || elem.value.trim().length == 0) addErrMsg(elem, elemName);
+        if(!phoneReg.test(elem.value) || elem.value.trim().length == 0) addErrMsg(elem, elemName);
         else removeErrMsg(elem);
     }
 
